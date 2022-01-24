@@ -1,5 +1,7 @@
 package br.com.fabio.agenciabe.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,5 +24,6 @@ public class User {
   @Column(unique = true)
   private String login;
 
+  @JsonProperty(access = Access.WRITE_ONLY)
   private String password;
 }
